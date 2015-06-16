@@ -5,7 +5,7 @@ class CreateCommands < ActiveRecord::Migration
       t.string :description
       t.interger :id_user
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end
