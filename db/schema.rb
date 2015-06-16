@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20150616033302) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string  "title",   limit: 255
+    t.text    "body",    limit: 65535
+    t.string  "code",    limit: 255
+    t.integer "user_id", limit: 4
+=======
 ActiveRecord::Schema.define(version: 20150616033315) do
 
   create_table "categories_posts", force: :cascade do |t|
     t.integer "post_id",     limit: 4
     t.integer "category_id", limit: 4
+>>>>>>> master
   end
 
 end
