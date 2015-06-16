@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @cammand.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cammand.description %>
+</p>
+
+<p>
+  <strong>Id user:</strong>
+  <%= @cammand.id_user %>
+</p>
+
+<%= link_to 'Edit', edit_cammand_path(@cammand) %> |
+<%= link_to 'Back', cammands_path %>
