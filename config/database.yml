@@ -14,7 +14,11 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
+<<<<<<< HEAD
   password: autocadne91
+=======
+  password: 2008
+>>>>>>> master
   socket: /var/run/mysqld/mysqld.sock
 
 development:
