@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'users/index'
+  get 'users/show'
 
 
   devise_for :users
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
   match '/show' => 'users#show',via: [:get, :post]
+  match '/edit' => 'users#edit',via: [:get, :post]
+  match '/xu_ly_edit' => 'users#xu_ly_edit',via: [:get, :post]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

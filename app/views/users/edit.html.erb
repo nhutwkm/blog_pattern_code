@@ -1,0 +1,16 @@
+id = <%= @id1= @user.id%>
+<%= form_tag "/xu_ly_edit?id1=#{@id1}"%>
+<%= label_tag "id"%><td><br>
+<%= text_field_tag :id , params[:id]="#{@user.id}"%><br>
+
+<%= label_tag "name"%><td><br>
+<%= text_field_tag :name , params[:name]="#{@user.name}"%><br>
+
+<%= label_tag "role_id"%><td><br>
+<%= text_field_tag :role_id , params[:role_id]="#{@user.role_id}"%><br>
+
+<%= label_tag "email"%><td><br>
+<%= text_field_tag :email, params[:email]="#{@user.email}"%><br>
+
+<br>
+<%= submit_tag "ok"%>
