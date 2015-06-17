@@ -6,32 +6,32 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-roles_list = [["admin", "admin"], ["user", "user"]]
+# roles_list = [["admin", "admin"], ["user", "user"]]
 
-roles_list.each do |name, desc|
-  Role.create!(name: name, desc: desc)
-end
+# roles_list.each do |name, desc|
+#   Role.create!(name: name, desc: desc)
+# end
 
-user_list = [
-  ["chuong",    "chuong@gmail.com", "user"],
-  ["phuc",      "phugc@hotmail.com", "user"],
-  ["luong",     "luong@yahoo.com", "user"],
-  ["tien",      "tien@gmail.com", "user"],
-  ["son", 		"son@gmail.com", "user"],
-  ["chien",     "chien@hotmail.com", "user"],
-  ["duydy",     "duydy@yahoo.com", "user"],
-  ["messi",     "messi@yahoo.com", "user"],
-  ["ronaldo",     "ronaldo@yahoo.com", "user"],
-  ["congphuong",     "congphuong@yahoo.com", "user"]
-]
+# user_list = [
+#   ["chuong",    "chuong@gmail.com", "user"],
+#   ["phuc",      "phugc@hotmail.com", "user"],
+#   ["luong",     "luong@yahoo.com", "user"],
+#   ["tien",      "tien@gmail.com", "user"],
+#   ["son", 		"son@gmail.com", "user"],
+#   ["chien",     "chien@hotmail.com", "user"],
+#   ["duydy",     "duydy@yahoo.com", "user"],
+#   ["messi",     "messi@yahoo.com", "user"],
+#   ["ronaldo",     "ronaldo@yahoo.com", "user"],
+#   ["congphuong",     "congphuong@yahoo.com", "user"]
+# ]
 
-user_list.each do |user, email, role|
-  User.create!(name: user,
-  				email: email, 
-  				password: "12345678",
-  				role: Role.find_by_name(role)
-          )
-end
+# user_list.each do |user, email, role|
+#   User.create!(name: user,
+#   				email: email, 
+#   				password: "12345678",
+#   				role: Role.find_by_name(role)
+#           )
+# end
 category_list = ["Ruby", "HTML", "PHP", "CSS", "JavaScript", "Java"]
 
 category_list.each do |category|
