@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# roles_list = [["admin", "admin"], ["user", "user"]]
+
+# roles_list.each do |name, desc|
+#   Role.create!(name: name, desc: desc)
+# end
+
 user_list = [
   ["chuong",    "chuong@gmail.com"],
   ["phuc",      "phugc@hotmail.com"],
@@ -19,11 +25,11 @@ user_list = [
   ["congphuong",     "congphuong@yahoo.com"]
 ]
 
-user_list.each do |user, email|
-  User.create(name: user,
+user_list.each do |user, email, role|
+  User.create!(name: user,
   				email: email, 
-  				encrypted_password: "$2a$10$cHyiV6SD/vdO674gzqZCP.mbSMjcct.gU..aS2Vi7nA.DZ8bILjZy",
-  				role: '')
+  				password: "123456",
+  				role: Role.first)
 end
 
 
