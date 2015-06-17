@@ -28,7 +28,7 @@ user_list = [
 user_list.each do |user, email, role|
   User.create!(name: user,
   				email: email, 
-  				password: "123456",
+  				password: "123456789",
   				role: Role.first)
 end
 
