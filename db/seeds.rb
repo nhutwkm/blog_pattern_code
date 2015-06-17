@@ -37,36 +37,39 @@ category_list = ["Ruby", "HTML", "PHP", "CSS", "JavaScript", "Java"]
 category_list.each do |category|
   Category.create(name: category)
 end
+categories = Category.all
+users = User.all
 post_list = [
-  ["Hello voi Ruby",    "Viet chunog trinh dau tien voi Ruby",  "puts 'Hello world'", "1"],
-  ["Hello voi Java",    "Viet chunog trinh dau tien voi Java",  "System.out.println('Hello world')", "2"]
+  ["Hello voi Ruby",    "Viet chunog trinh dau tien voi Ruby",  "puts 'Hello world'", users.sample],
+  ["Hello voi Java",    "Viet chunog trinh dau tien voi Java",  "System.out.println('Hello world')", users.sample]
 ]
 post_list.each do |title, desc, code, userid|
   Post.create(title: title,
               desc: desc,
               code: code,
-              user_id: userid)
+              user_id: userid.id)
 end
+posts = Post.all
 categories_posts_list = [
-  ["1", "1"],
-  ["2", "6"]
+  [posts.sample, categories.sample],
+  [posts.sample, categories.sample]
 ]
 categories_posts_list.each do |postid, cateid|
   CategoriesPost.create(
-            post_id: postid,
-            category_id: cateid
+            post_id: postid.id,
+            category_id: cateid.id
     )
 end
 command_list = [
-  ["4", "1",  "Khong the tin noi"],
-  ["5", "1",  "That tuyet voi"],
-  ["4", "2",  "Khong the tin noi"],
-  ["5", "2",  "That tuyet voi"]
+  [users.sample, posts.sample,  "Khong the tin noi"],
+  [users.sample, posts.sample,  "That tuyet voi"],
+  [users.sample, posts.sample,  "Khong the tin noi"],
+  [users.sample, posts.sample,  "That tuyet voi"]
 ]
 command_list.each do |userid, postid, comment|
   Command.create(
-          user_id: userid,
-          post_id: postid,
+          user_id: userid.id,
+          post_id: postid.id,
           comment: comment
     )
 end
