@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
       has_many :posts
       has_many :comments
       belongs_to :role
+
+      def self.user_list(page)
+      	User.paginate(:page => page, :per_page => 5)
+      end
 end
