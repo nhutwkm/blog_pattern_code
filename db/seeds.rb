@@ -19,7 +19,7 @@ user_list = [
   ["tien",      "tien@gmail.com","tien1234","user"],
   ["son", 		"son@gmail.com","son12345","user"],
   ["chien",     "chien@hotmail.com","chien123","admin"],
-  ["duydy",     "duydy@yahoo.com","duy12345","user"],
+  ["duy",     "duydy@yahoo.com","duy12345","user"],
   ["messi",     "messi@yahoo.com","messi123","admin"],
   ["ronaldo",     "ronaldo@yahoo.com","ronaldo1","user"],
   ["congphuong",     "congphuong@yahoo.com","congphuong","user"]
