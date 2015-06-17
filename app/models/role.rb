@@ -1,3 +1,3 @@
 class Role < ActiveRecord::Base
-	belong_to :roles
+	belongs_to :user
 end
