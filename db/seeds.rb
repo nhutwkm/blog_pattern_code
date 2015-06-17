@@ -13,23 +13,23 @@
 # end
 
 user_list = [
-  ["chuong",    "chuong@gmail.com"],
-  ["phuc",      "phugc@hotmail.com"],
-  ["luong",     "luong@yahoo.com"],
-  ["tien",      "tien@gmail.com"],
-  ["son", 		"son@gmail.com"],
-  ["chien",     "chien@hotmail.com"],
-  ["duydy",     "duydy@yahoo.com"],
-  ["messi",     "messi@yahoo.com"],
-  ["ronaldo",     "ronaldo@yahoo.com"],
-  ["congphuong",     "congphuong@yahoo.com"]
+  ["chuong",    "chuong@gmail.com","chuong12","user"],
+  ["phuc",  "pdkproitf@gmail.com",  "pdkproitf","admin"],
+  ["luong",     "luong@yahoo.com","luong123","user"],
+  ["tien",      "tien@gmail.com","tien1234","user"],
+  ["son", 		"son@gmail.com","son12345","user"],
+  ["chien",     "chien@hotmail.com","chien123","admin"],
+  ["duydy",     "duydy@yahoo.com","duy12345","user"],
+  ["messi",     "messi@yahoo.com","messi123","admin"],
+  ["ronaldo",     "ronaldo@yahoo.com","ronaldo1","user"],
+  ["congphuong",     "congphuong@yahoo.com","congphuong","user"]
 ]
 
-user_list.each do |user, email, role|
+user_list.each do |user, email,password,role_id|
   User.create!(name: user,
   				email: email, 
-  				password: "123456",
-  				role: Role.first)
+  				password: password,
+  				role: Role.find_by_name(role_id))
 end
 
 
