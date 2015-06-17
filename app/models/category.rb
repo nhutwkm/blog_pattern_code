@@ -14,7 +14,7 @@ class Category < ActiveRecord::Base
 		Category.find_by_id(id).update(:name=>name)
 		
 	end
-	def self.create(name)
+	def self.create(name) 
 		# binding.pry
 		object=Category.new(:name=>name)
 		object.save
