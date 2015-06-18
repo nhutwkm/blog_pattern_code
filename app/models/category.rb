@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
 	has_many :categories_posts
+<<<<<<< HEAD
 
   validates :name, :presence => true
   validates :name, :length => { :in => 5..200, :message => " is invalid" }
@@ -32,3 +33,7 @@ class Category < ActiveRecord::Base
 		
 	end
 end
+=======
+	has_many :posts, through: :categories_posts
+end
+>>>>>>> master

@@ -5,6 +5,7 @@ class CategorysController < ApplicationController
 
   	# @categorys = Post.all
   	# binding.pry
+  
   end
   def chitiet 	
   	 @category=Category.chitiet(params[:id])
