@@ -33,6 +33,7 @@ rerun.txt
 pickle-email-*.html
 
 config/database.yml
+config/database.yml~
 Gemfile.lock
 db/schema.rb
 
