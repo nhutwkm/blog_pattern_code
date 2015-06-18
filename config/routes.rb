@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   post "categories/new", to: "categories#new"
   resources :categories  #edit,show,index,delete
 
+  #comments 
+  get "comments/list", to:"commands#list"
 
 end
