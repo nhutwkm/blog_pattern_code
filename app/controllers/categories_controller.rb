@@ -2,18 +2,19 @@ class CategoriesController < ApplicationController
   def index
   	@categories = Category.category_list(params[:page])
   end
-  def chitiet 	
-  	 @category=Category.chitiet(params[:id])
+  def Detail 	
+  	 @category=Category.chitiet(params[:category_id])
+  	 # binding.pry
   end
 	def delete
-		Category.delete(params[:id])
+		Category.delete(params[:category_id])
 		redirect_to action: :index
 	end	
 	def edit
     @category=Category.chitiet(params[:id])
 	end
 	def update
-		Category.update(params[:id], params[:name])
+		Category.update(params[:category_id], params[:name])
 		redirect_to action: :index
 	end
 	def new

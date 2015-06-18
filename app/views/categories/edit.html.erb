@@ -1,8 +1,6 @@
-<%= form_tag "/update/#{@category.id}" do %>
+<%= form_tag category_update_path(params[:id]) do %>
 
 <%= label_tag :name %>
 <%= text_field_tag :name, params[:name]="#{@category.name}" %>
-
-
 <%= submit_tag "Edit", :class => "btn btn-primary" %>
 <% end %>
