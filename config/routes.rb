@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get '/users_posts', to: 'users#users_posts'
   # You can have the root of your site routed with "root"
   root 'users#index'
+  resources :posts do
+      resources :commands
+    end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

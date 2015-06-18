@@ -5,7 +5,18 @@ class Post < ActiveRecord::Base
 	belongs_to :user 
 
 	def self.list_posts_of_user(user)
-		Post.where(user_id: user.id)
+	  Post.where(user_id: user.id)
 	end
-
+	def self.do_list
+      Post.all
+  	end
+	def self.do_new(post_params)
+	  Post.new(post_params)
+	end
+	def self.delete(id)
+	  Post.find(id).destroy
+	end	
+	def self.post_list(page)
+      Post.paginate(:page =>page, :per_page => 3).order('title asc')	 
+	end
 end
