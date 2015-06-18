@@ -1,6 +1,6 @@
-class CategorysController < ApplicationController
+class CategoriesController < ApplicationController
   def index
-  	@categorys = Category.category_list(params[:page])
+  	@categories = Category.category_list(params[:page])
   end
   def chitiet 	
   	 @category=Category.chitiet(params[:id])
@@ -17,7 +17,9 @@ class CategorysController < ApplicationController
 		redirect_to action: :index
 	end
 	def new
+        return render "categories/_form_new_category" unless params[:name].present?
 		Category.create(params[:name])
 		redirect_to action: :index
 	end
+
 end
