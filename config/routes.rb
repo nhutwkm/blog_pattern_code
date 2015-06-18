@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   post '/update/:id', to: 'categorys#update'
   post '/new', to: 'categorys#new'
 
+  # List posts of a user
+  post '/users_posts', to: 'users#users_posts'
+  get '/users_posts', to: 'users#users_posts'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
