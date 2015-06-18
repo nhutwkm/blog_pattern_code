@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comments list</title>
+	<style type="text/css">
+	td{
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+<table>
+	<tr>
+		<td><a>Id User</a></td>
+		<td><a>Id Post</a></td> 
+		<td><a>Id Comments</a></td>
+		</tr>
+	<% @command.each do |comment| %>
+	<tr>
+		<td><%= comment.user_id%></td>
+		<td><%= comment.post_id%></td> 
+		<td><%= comment.comment%></td>
+	</tr>
+<%end%>
+</table>
+</body>
+</html>
