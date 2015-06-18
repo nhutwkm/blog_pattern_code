@@ -1,6 +1,10 @@
 class CategorysController < ApplicationController
   def index
+  
   	@categorys = Category.category_list(params[:page])
+
+  	# @categorys = Post.all
+  	# binding.pry
   end
   def chitiet 	
   	 @category=Category.chitiet(params[:id])
@@ -18,7 +22,10 @@ class CategorysController < ApplicationController
 		redirect_to action: :index
 	end
 	def new
-		Category.create(params[:name])
+  	# @category=Category.new
+	 	Category.create(params[:name])
+	
 		redirect_to action: :index
+		
 	end
 end
