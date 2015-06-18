@@ -3,7 +3,20 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
   
   def index
+    @user = User.user_list(params[:page])
+  end
 
+  def edit#bat su kien edit hien thi thong tin tai cot can sua
+    @user = User.edit(params[:id])
+    @role = Role.all
+  end
+
+  def xu_ly_edit#ham de xu ly edit udate cac thong tin xuong db
+    
+    @rl = Role.edit_find(params[:role_name])
+    # binding.pry
+    User.xu_ly_edit(params[:id],params[:name],params[:email],@rl.id)
+    redirect_to users_path
   end
 
   def list
