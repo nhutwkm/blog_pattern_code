@@ -20,6 +20,7 @@ categories_posts_list.each do |postid, cateid|
             category_id: cateid
     )
 end
+
 params_command = config["command_list"]
 params_command.each do |pm|
   pm["user_id"] = User.all.sample.id
