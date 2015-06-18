@@ -30,7 +30,7 @@
       	<td><td><%= post.desc %></td></td>
         <td><td><%= User.find_by(id: post.user_id).name %></td></td>
 
-        <td><%= link_to 'edit', "/edit?id=#{@id}" %></td>
+        <td><%= link_to 'edit', edit_post_path(@id) %></td>
       </tr>
     <% end %>
   </tbody>
