@@ -1,0 +1,28 @@
+<h1>Category</h1>
+<table>
+	<tr>
+	<td>ID</td>
+	<td>Name</td>
+	<td></td>
+	<td></td>
+	</tr>
+	<% @categorys.each do |cte| %>
+	<tr>
+	
+		<td><%=cte.id%></td>
+		<td><%=cte.name%></td>
+		<td><%= link_to 'Detail', "/category/#{cte.id}" %></td>
+		<td><%= link_to 'Edit', "/edit/#{cte.id}" %></td>
+        <td><%= link_to 'Delete', "/delete/#{cte.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+	</tr>
+	<% end %>
+</table>
+<%= will_paginate @categorys %>
+<%= form_tag "/new" do %>
+
+<%= label_tag :name %>
+<%= text_field_tag :name, params[:name] %>
+<%= submit_tag "new", :class => "btn btn-primary" %>
+
+<% end %>

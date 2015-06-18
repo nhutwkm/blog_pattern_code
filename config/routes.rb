@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  get 'users/index'
+  get 'categorys/index'
 
+  get 'users/index'
+  get '/category/:id', to: 'categorys#chitiet'
+  get '/edit/:id', to: 'categorys#edit'
+  delete '/delete/:id', to: 'categorys#delete'
+  post '/update/:id', to: 'categorys#update'
+  post '/new', to: 'categorys#new'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
