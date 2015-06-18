@@ -1,0 +1,111 @@
+roles_list:
+- 
+  name: admin
+  desc: admin
+
+- 
+  name: user
+  desc: user
+
+user_list:
+- 
+  name: chuong
+  email: chuong@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: phuc
+  email: phuc@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: luong
+  email: luong@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: tien
+  email: tien@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: son
+  email: son@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: chien
+  email: chien@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: duydy
+  email: duydy@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: messi
+  email: messi@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: ronaldo
+  email: ronaldo@gmail.com
+  password: 12345678
+  role_id: 2
+
+- 
+  name: congphuong
+  email: congphuong@gmail.com
+  password: 12345678
+  role_id: 2
+
+category_list:
+- 
+  name: ruby
+
+- 
+  name: HTML
+
+- name: PHP
+
+- 
+  name: CSS
+
+- 
+  name: JavaScripts
+
+- 
+  name: Java
+
+post_list:
+- 
+  title: Hello voi Ruby
+  desc: Viet chunog trinh dau tien voi Ruby
+  code: puts 'Hello world'
+
+- 
+  title: Hello voi Java
+  desc: Viet chunog trinh dau tien voi Java
+  code: System.out.println('Hello world')
+
+command_list:
+-
+  comment: Khong the tin noi
+
+-
+  comment: That tuyet voi!
+
+-
+  comment: Khong the tin noi
+
+-
+  comment: That tuyet voi!

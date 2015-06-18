@@ -43,7 +43,6 @@ group :development, :test do
   gem 'kaminari', '~> 0.16.1'
   # Access an IRB console on exception pages or by using <%= console %> in views
 
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

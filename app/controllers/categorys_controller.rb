@@ -5,7 +5,6 @@ class CategorysController < ApplicationController
   def chitiet 	
   	 @category=Category.chitiet(params[:id])
   end
-
 	def delete
 		Category.delete(params[:id])
 		redirect_to action: :index

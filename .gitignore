@@ -33,7 +33,8 @@ rerun.txt
 pickle-email-*.html
 
 config/database.yml
-#Gemfile.lock
+config/database.yml~
+Gemfile.lock
 db/schema.rb
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
