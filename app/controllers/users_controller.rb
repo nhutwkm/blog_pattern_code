@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
   
   def index
+
+  end
+
+  def list
+      @users = User.all
   end
 
   def users_posts

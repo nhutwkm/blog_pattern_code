@@ -6,7 +6,7 @@
 	<td></td>
 	<td></td>
 	</tr>
-	<% @categorys.each do |cte| %>
+	<% @categories.each do |cte| %>
 	<tr>
 	
 		<td><%=cte.id%></td>
@@ -18,8 +18,8 @@
 	</tr>
 	<% end %>
 </table>
-<%= will_paginate @categorys %>
-<%= form_tag "/new" do %>
+<%= will_paginate @categories %>
+<%= form_tag categories_new_path do %>
 
 <%= label_tag :name %>
 <%= text_field_tag :name, params[:name] %>
