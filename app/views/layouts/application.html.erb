@@ -7,13 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+<header>
+      <%= render 'layouts/header' %>
+</header>
+ <main>
+ <div style="float: left ; width: 25%;">
+      <%= render 'layouts/slideder' %>
+ </div>
+ <div style="float: left; width: 75%">
 <%= yield %>
-
+</div>
+</main>
 </body>
 </html>
