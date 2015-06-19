@@ -2,16 +2,25 @@ class PostsController < ApplicationController
 		def index
     	  @posts = Post.do_list
       	  @posts = Post.post_list(params[:page])
+      	  @users = User.all
   		end
 		
 		def new
 		  @users = User.all
 		  @post = Post.new
+		  @all_category = Category.all
+		  @category_post = @post.categories_posts.build
+
 		end
 
 		def create
 		  @post = Post.do_new(post_params)
 		  if @post.save
+		  	params[:object][:id].each do |fa|
+		  		unless fa.blank? or fa.nil?
+		  		CategoriesPost.create(category_id: fa, post_id: @post.id)
+		  	end
+		  end
 		    redirect_to @post
 			else
 			render 'new'
@@ -30,6 +39,7 @@ class PostsController < ApplicationController
 		def edit 
 		  @users = User.all
 		  @post = Post.find(params[:id])
+		  @all_category = Category.all
 		end
 		
 		def show	

@@ -21,7 +21,14 @@
 
 
 </p>
-
+<p> 
+<%= fields_for (@category_post) do |ab|%>
+<div class = "field">
+<%=ab.label "ALL CATEGORY"%>
+<%= collection_select(:object , :id, @all_category, :id, :name, {}, {:multiple => true})%>
+</div>
+<%end%>
+</p>
 
   <p>
     <%= f.submit %>

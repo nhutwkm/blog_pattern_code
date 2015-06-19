@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
 	has_many :categories_posts
-	has_many :posts
+	has_many :posts, :through => :categories_posts
 	def self.category_list(page)
 		# Category.all	
 	    # Category.all.paginate(id: page, per_page: 1)
