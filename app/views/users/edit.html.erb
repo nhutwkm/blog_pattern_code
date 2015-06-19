@@ -16,9 +16,9 @@ id = <%= @id1= @user.id%>
 
 
  <%= select_tag(:role_name, options_for_select(
- 	@role.collect{|u| 
- 		params[:role_name]=[u.name] }
- 		))
+   @role.collect{|u| 
+     params[:role_name]=[u.name] }
+     ))
  %>
 
 

@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   #USER
   devise_for :users
   # get "users/list" , to: "users#list"
-  get "users/edit", to: "users#edit"
+   get "/users/edit", to: "users#edit"
   resources :users  do #edit,show,index,delete
+    get "edit"
   end
     
   # POST
