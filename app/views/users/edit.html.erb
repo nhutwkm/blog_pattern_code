@@ -1,25 +1,32 @@
-id = <%= @id1= @user.id%>
-<%= form_tag users_xu_ly_edit_path%>
-<%= label_tag "id"%><td><br>
-<%= text_field_tag :id , params[:id]="#{@user.id}"%><br>
+<%= form_for(@user) do |f|%>
 
+ <div class="field">
+    <br><%= f.label :id %><br>
+    <%= f.text_field :id %>
+  </div>
 
-<%= label_tag "ten"%><td><br>
-<%= text_field_tag :name , params[:name]="#{@user.name}"%><br>
+  <div class="field">
+    <br><%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
 
+  <div class="field">
+    <br><%= f.label :email %><br>
+    <%= f.text_field :email %><br>
+  </div>
 
-<%= label_tag "email"%><td><br>
-<%= text_field_tag :email, params[:email]="#{@user.email}"%><br>
-
-
-<%= label_tag "role_name"%><td><br>
-
-
- <%= select_tag(:role_name, options_for_select(
+  <div class="field">
+  <br>
+<%= select_tag(:role_name, options_for_select(
    @role.collect{|u| 
      params[:role_name]=[u.name] }
      ))
  %>
+  </div>
+  <div class="actions">
+   <br>
+ <br>
+    <%= f.submit(:class  => "btn btn-primary") %>
+  </div>
 
-<br>
-<%= submit_tag "ok"%>
+<% end %>

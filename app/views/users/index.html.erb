@@ -20,7 +20,7 @@
         <td><td><%= student.email %></td></td>
         <td><%= student.role_id %></td>
 
-        <td><%= link_to 'edit', users_edit_path %></td>
+        <td><%= link_to 'edit', user_edit_path(student) %></td>
       </tr>
     <% end %>
   </tbody>
