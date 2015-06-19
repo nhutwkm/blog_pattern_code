@@ -34,14 +34,21 @@ class PostsController < ApplicationController
 		
 		def show	
     	  @post = Post.find(params[:id])
-  		end
-  		def destroy
-	      @post = Post.delete(params[:id])
+    	  @list_categories = list_categories(params[:id])
+  	end
+
+  	def destroy
+	    @post = Post.delete(params[:id])
 		  @post.destroy
-    	  redirect_to posts_path
-  		end
+    	redirect_to posts_path
+  	end
+
   	private
   		def post_params
     	  params.require(:post).permit(:title, :desc, :code, :user_id)
+  		end
+
+  		def list_categories(id)
+  			CategoriesPost.where(post_id: id)
   		end
 end
