@@ -20,5 +20,4 @@ class User < ActiveRecord::Base
             User.find_by_id(id).update(id: id,name: name, email: email,role_id: role_id)
         end
       end
-
 end

@@ -37,5 +37,4 @@ class UsersController < ApplicationController
     end
     @posts_of_user = @posts_of_user.paginate(:page => params[:page], :per_page  => 1)
   end
-
 end

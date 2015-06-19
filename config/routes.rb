@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users  do #edit,show,index,delete
     get "edit"
   end
+  
   # POST
   resources :posts do #edit,show,index,delete
     resources :commands
