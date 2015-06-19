@@ -16,7 +16,7 @@
    <% @user.each do |student| %>
      <tr>
       	<td><%= @id=student.id %></td>
-    	<td><td><%= student.name %></td></td>
+    	<td><td><%=link_to student.name, user_posts_path(@id) %> </td></td>
         <td><td><%= student.email %></td></td>
         <td><%= student.role_id %></td>
 
