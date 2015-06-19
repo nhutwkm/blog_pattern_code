@@ -17,8 +17,8 @@
       	<td><td><%= post.title %></td></td>
       	<td><td><%= post.desc %></td></td>
         <td><td><%= User.find_by(id: post.user_id).name %></td></td>
-
-        <td><%= link_to 'edit', edit_post_path(@id) %></td>
+        <td><%= link_to 'Show', post_path(@id) %></td>
+        <td><%= link_to 'Edit', edit_post_path(@id) %></td>
       </tr>
     <% end %>
   </tbody>

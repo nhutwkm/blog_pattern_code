@@ -7,6 +7,7 @@ Rails.application.routes.draw do
    get "/users/edit", to: "users#edit"
   resources :users  do #edit,show,index,delete
     get "edit"
+    get "posts"
   end
   
   # POST
