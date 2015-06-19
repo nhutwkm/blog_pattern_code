@@ -6,17 +6,15 @@ class UsersController < ApplicationController
     @user = User.user_list(params[:page])
   end
 
-  def edit#bat su kien edit hien thi thong tin tai cot can sua
+  def edit#bat su kien edit hien thi thong tin tai cot can sua,sau khi ket thuc se nhay den update
     @user = User.edit(params[:user_id])
     @role = Role.all
   end
 
   def update#ham de xu ly edit udate cac thong tin xuong db
-    # binding.pry
     @user = params[:user]
     @rl = Role.edit_find(params[:role_name])
-    # binding.pry
-    User.xu_ly_edit(@user[:id].to_i,@user[:name],@user[:email],@rl.id)
+    User.xu_ly_edit(params[:id].to_i,@user[:name],@user[:email],@rl.id)
     redirect_to users_path
   end
 
