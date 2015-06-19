@@ -7,6 +7,7 @@ Rails.application.routes.draw do
    get "/users/edit", to: "users#edit"
   resources :users  do #edit,show,index,delete
     get "edit"
+    get 'posts'
   end
   
   # POST
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
 
   # CATEGORY
   post "categories/new", to: "categories#new"
-  match 'users_posts', to: 'users#users_posts', via: [:post, :get]
+  # match 'users_posts', to: 'users#users_posts', via: [:post, :get]
   resources :categories do #edit,show,index,delete
     get '/Detail', to: 'categories#Detail'
     delete '/delete', to: 'categories#delete'

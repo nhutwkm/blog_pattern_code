@@ -1,16 +1,4 @@
-<center>
 <h1>Listing Posts</h1>
-
-<form method="post" action="/users_posts">
-  <select name="username">
-    <option value="-1">&nbsp;</option>
-    <% @users.each do |user|%>
-    <option value=<%=user.name%>><%=user.name%></option>
-    <% end%>
-  </select>
-  <input type="submit" value="Search">  
-</form>
-
 <table border="1" style="width:50%">
   <thead>  
     <tr>
@@ -36,4 +24,4 @@
   </tbody>
 </table>
 <%= will_paginate @posts_of_user %>
-</center>
+<%= link_to "Back", users_path%>
