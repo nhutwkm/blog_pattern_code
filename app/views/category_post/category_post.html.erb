@@ -1,0 +1,20 @@
+<table>
+<tr>
+	<td>Title</td>
+	<td>Desc</td>
+	<td>Code</td>
+</tr>
+ <% if @category_pos.nil? 
+
+ else  %>
+<% @category_pos.each do |post| %>
+<tr>
+  <td><%= post.title %></td>
+  <td><%= post.desc %></td>
+  <td><%= post.code %></td>
+  </tr>
+  <% end %>
+<% end %>
+
+</table>
+ <%= will_paginate @category_pos %>

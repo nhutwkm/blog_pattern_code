@@ -1,0 +1,36 @@
+<h2>List category-post</h2>
+<div>
+<%= form_tag( category_post_index_path, :method => :get) do %>
+
+<%= label_tag :categories %>
+<%if params[:categories].nil? %>
+
+<%= select_tag "categories", options_from_collection_for_select(@categories, "id", "name") %>
+<%else%>
+<%= select_tag "categories", options_from_collection_for_select(@categories, "id", "name","#{params[:categories]}") %>
+<% end %>
+<%= submit_tag "Xem", :class => "btn btn-primary" %>
+
+<% end %>
+
+<table>
+<tr>
+	<td>Title</td>
+	<td>Desc</td>
+	<td>Code</td>
+</tr>
+ <% if @category_pos.nil? 
+
+ else  %>
+<% @category_pos.each do |post| %>
+<tr>
+  <td><%= post.title %></td>
+  <td><%= post.desc %></td>
+  <td><%= post.code %></td>
+  </tr>
+  <% end %>
+<% end %>
+
+</table>
+<%= will_paginate @category_pos %>
+</div>
