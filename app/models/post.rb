@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
 	  Post.find(id).destroy
 	end	
 	def self.post_list(page)
-      Post.paginate(:page =>page, :per_page => 3).order('title asc')	 
+      Post.paginate(:page =>page, :per_page => 5).order('title asc')	 
 	end
 	def self.Category_post_find(id)
 

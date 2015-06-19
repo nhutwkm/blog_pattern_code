@@ -22,5 +22,8 @@ class CategoriesController < ApplicationController
 		Category.create(params[:name])
 		redirect_to action: :index
 	end
-
+	private
+  		def category_params
+    	  params.require(:object).permit(:id, :name)
+  		end
 end
