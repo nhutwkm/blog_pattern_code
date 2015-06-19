@@ -1,8 +1,9 @@
 <%= form_for(@user) do |f|%>
 
  <div class="field">
-    <br><%= f.label :id %><br>
-    <%= f.text_field :id %>
+    <br><%= f.label :id %>
+      =  
+    <%= params[:user_id] %>
   </div>
 
   <div class="field">
@@ -12,12 +13,13 @@
 
   <div class="field">
     <br><%= f.label :email %><br>
-    <%= f.text_field :email %><br>
+    <%= f.email_field :email %><br>
   </div>
 
   <div class="field">
   <br>
-<%= select_tag(:role_name, options_for_select(
+  <%= f.label :role_name %><br>
+    <%= select_tag(:role_name, options_for_select(
    @role.collect{|u| 
      params[:role_name]=[u.name] }
      ))
