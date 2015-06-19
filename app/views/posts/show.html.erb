@@ -22,9 +22,12 @@
 
 <p>
   <strong>Categories:</strong>
+ 
   <% @list_categories.each do |item| %>
-  <%= Category.find_by(id: item.category_id).name %>
+  <% @name=Category.find_by(id: item.category_id).name %>
+   <%= link_to "#{@name}", category_post_category_post_path(item.category_id) %> 
   <% end %>
+  
 <br>
 
 

@@ -19,4 +19,10 @@ class Post < ActiveRecord::Base
 	def self.post_list(page)
       Post.paginate(:page =>page, :per_page => 3).order('title asc')	 
 	end
+	def self.Category_post_find(id)
+
+		 Post.joins(:categories_posts).where("categories_posts.category_id=#{id}")
+		 # User.where(id: 1).joins(:articles).explain
+		 # binding.pry
+	end
 end
