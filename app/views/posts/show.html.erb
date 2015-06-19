@@ -6,18 +6,25 @@
 </p>
 
 <p>
-  <strong>description:</strong>
+  <strong>Description:</strong>
   <%= @post.desc %>
 </p>
 
 <p>
-  <strong>code:</strong>
+  <strong>Code:</strong>
   <%= @post.code %>
 </p>
 
 <p>
-  <strong>user:</strong>
-  <%= @post.user_id %>	
+  <strong>User:</strong>
+  <%= User.find_by(id: @post.user_id).name%>	
+<br>
+
+<p>
+  <strong>Categories:</strong>
+  <% @list_categories.each do |item| %>
+  <%= Category.find_by(id: item.category_id).name %>
+  <% end %>
 <br>
 
 
