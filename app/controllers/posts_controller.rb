@@ -40,6 +40,7 @@ class PostsController < ApplicationController
 		  @users = User.all
 		  @post = Post.find(params[:id])
 		  @all_category = Category.all
+		  @category_post = @post.categories_posts.build
 		end
 		
 		def show	
