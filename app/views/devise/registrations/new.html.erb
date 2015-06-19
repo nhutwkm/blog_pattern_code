@@ -15,13 +15,11 @@
 
  <div class="field">
   <br>
-  <%= f.label :role_id %><br>
-    <%= select_tag(:role_id, options_for_select(
-   @role.collect{|u| 
-     params[:role_id]=[u.id] }
-     ))
- %>
+  <%= f.select :role_id, options_for_select(@role.collect{ |u| [u.name, u.id] }) %>
   </div>
+
+
+
 
 
   <div class="field">
@@ -36,6 +34,8 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+
 
   <div class="actions"> 
     <%= f.submit "Sign up" %>
