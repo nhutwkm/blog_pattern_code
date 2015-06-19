@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   # CATEGORY
   post "categories/new", to: "categories#new"
-  resources :categories  #edit,show,index,delete
+  resources :categories do #edit,show,index,delete
+    get '/Detail', to: 'categories#Detail'
+    delete '/delete', to: 'categories#delete'
+    post '/update', to: 'categories#update'
+  end
 
 
 end

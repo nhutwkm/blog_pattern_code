@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
 	def self.category_list(page)
 		# Category.all	
 	    # Category.all.paginate(id: page, per_page: 1)
-	    Category.paginate(:page =>page, :per_page => 1).order('name asc')
+	    Category.paginate(:page =>page, :per_page => 5)
 		 # Category.id(page).per(10)
 	end
 	def self.chitiet(id)
@@ -23,7 +23,6 @@ class Category < ActiveRecord::Base
 		Category.where(id: id).destroy
 		
 	end
-
 	# has_many :posts, through: :categories_posts
 
 end
