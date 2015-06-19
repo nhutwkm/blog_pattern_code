@@ -17,7 +17,40 @@
 
 <p>
   <strong>user:</strong>
-  <%= @post.user_id %>
+  <%= @post.user_id %>	
 <br>
+
+
+
+<h2>Comments</h2>
+<% @post.commands.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+      <td><td><%= User.find_by(id: comment.user_id).name %></td></td>
+    	
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+
+    <%= comment.comment %>
+  </p>
+<% end %>
+ 
+<h2>Add a comment:</h2>
+<%= form_for([@post, @post.commands.build]) do |f| %>
+  <p>
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :comment%><br>
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
