@@ -29,7 +29,14 @@ class PostsController < ApplicationController
 
 		def update
 		  @post = Post.find(params[:id])
+		  CategoriesPost.where(post_id: @post.id).destroy_all
+		  
 		  if @post.update(post_params)
+		  	params[:object][:id].each do |fa|
+		  		unless fa.blank? or fa.nil?
+		  	CategoriesPost.create(category_id: fa, post_id: @post.id)
+		  		end
+		  	end
 		    redirect_to posts_path
 			else 
 			  render 'edit'
