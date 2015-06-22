@@ -41,6 +41,7 @@ class Ability
         cannot :create, :all
         cannot :destroy, :all
         cannot :delete, :all
+        can :posts, User, :user_id => user.id
     end
 
   end
