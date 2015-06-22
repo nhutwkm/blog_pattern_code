@@ -17,7 +17,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= User.find_by(id: @post.user_id).name%>	
+  <%= User.find_by(id: @post.user_id).name%>  
 <br>
 
 <p>
@@ -34,25 +34,13 @@
 
 <h2>Comments</h2>
 <% @post.commands.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-      <td><td><%= User.find_by(id: comment.user_id).name %></td></td>
-    	
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-
-    <%= comment.comment %>
-  </p>
+  <td><td><strong><%= User.find_by(id: comment.user_id).name %>:</strong>
+  <%= comment.comment %><br>
+  </td></td>
 <% end %>
  
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.commands.build]) do |f| %>
-  <p>
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </p>
   <p>
     <%= f.label :comment%><br>
     <%= f.text_area :comment %>
