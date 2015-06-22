@@ -1,31 +1,18 @@
-<h1>Listing posts</h1>
+<h1>Post</h1>
  <p>
  <%= link_to 'NEW POST', new_post_path %>
  </p>
  <br>
-<table border="1" style="width:50%">
-  <tr>
-    <th>Title</th>
-    <th>description</th>
-    <th>code</th>
-    <th>user_id</th>
-    <th>OPTION1</th>
-    <th>OPTION2</th>
-    <th>OPTION3</th>
-    
-  </tr>
- 
-  <% @posts.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.desc %></td>
-      <td><%= article.code %></td>
-      <td><%= User.find_by(id: article.user_id).name %></td>
-      
-      <td><%= link_to 'Show', post_path(article) %></td>
-      <td><%= link_to 'Edit', edit_post_path(article) %></td>
-      <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+
+<div id="articles">
+<% for article in @posts %>
+  <h2>
+    <%= link_to h(article.title), article %>
+  </h2>
+  <div class="author">from <%=h User.find_by(id: article.user_id).name %> </div>
+  <div class="desc"><%= simple_format(article.desc) %></div>
+  <div class="content"><%= simple_format(article.code) %></div>
+<% end %>
+</div>
+
 <%= will_paginate @posts %>
