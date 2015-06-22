@@ -9,7 +9,7 @@
   <h2>
     <%= link_to h(article.title), article %>
   </h2>
-  <div class="author">from <%=h User.find_by(id: article.user_id).name %> </div>
+  <div class="author" style="color: red">from <%=link_to User.find_by(id: article.user_id).name, user_posts_path(article.user_id) %> </div>
   <div class="desc"><%= simple_format(article.desc) %></div>
   <div class="content"><%= simple_format(article.code) %></div>
 <% end %>
