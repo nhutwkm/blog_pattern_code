@@ -5,7 +5,7 @@ class CommandsController < ApplicationController
     redirect_to post_path(@post)
   end
   def destroy
-  @post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
   	@comment = Command.find(params[:id])
   	@comment.destroy
   	redirect_to @post
