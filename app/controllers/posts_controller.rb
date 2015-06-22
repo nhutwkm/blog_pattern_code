@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 		end
 
 		def create
-		  @post = Post.do_new(post_params)
+		  @post = Post.do_new(user_id: current_user.id,title: post_params[:title],desc: post_params[:desc],code: post_params[:code])
 		  if @post.save
 		  	params[:object][:id].each do |fa|
 		  		unless fa.blank? or fa.nil?
