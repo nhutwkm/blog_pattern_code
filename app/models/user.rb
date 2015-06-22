@@ -7,6 +7,18 @@ class User < ActiveRecord::Base
   has_many :comments
   belongs_to :role
 
+
+  
+    def self.current
+      Thread.current[:user]
+    end
+
+    def self.current=(user)
+      Thread.current[:user] = user
+    end
+  
+  
+
     def self.user_list(page)
       	User.paginate(:page => page, :per_page => 5)
       end

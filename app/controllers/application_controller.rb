@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
     before_action :authenticate_user!#kiem tra xem da dang nhap moi duoc chinh sua
     before_filter :configure_permitted_parameters, if: :devise_controller?
+    before_filter :set_current_user
     @categories= Category.all
     protected
 
@@ -17,4 +18,8 @@ class ApplicationController < ActionController::Base
 
     end
 
+
+    def set_current_user
+      User.current = current_user
+    end
 end
