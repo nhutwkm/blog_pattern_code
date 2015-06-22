@@ -1,6 +1,16 @@
+<style>
+	table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    width: 100px;
+}
+</style>
 <h1>Category</h1>
-<table>
-	<tr>
+<table >
+	<tr style="font-weight:bold;">
 	<td>ID</td>
 	<td>Name</td>
 	<td></td>
@@ -9,7 +19,7 @@
 	<% @categories.each do |cte| %>
 	<tr>
 	
-		<td><%=cte.id%></td>
+		<td style="width: 20px;"><%=cte.id%></td>
 		<td><%=cte.name%></td>
 		<td><%= link_to 'Detail',category_Detail_path(cte.id)  %></td>
 		<td><%= link_to 'Edit', edit_category_path(cte.id) %></td>
