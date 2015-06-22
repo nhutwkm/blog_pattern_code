@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
 		def index
-    	  @posts = Post.do_list
-      	  @posts = Post.post_list(params[:page])
+			# binding.pry
+			  if params[:format].nil?
+			  @posts= Post.all
+			  else
+    	  @posts = Post.Category_post_find(params[:format])
+    		end 
+    	  @posts=@posts.paginate(:page => params[:page], :per_page  => 5)
+      	  # @posts = Post.post_list(params[:page])
       	  @users = User.all
   		end
 		
