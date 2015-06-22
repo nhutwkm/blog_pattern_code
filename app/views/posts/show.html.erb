@@ -36,7 +36,7 @@
 <% @post.commands.each do |comment| %>
   <td><td><strong><%= User.find_by(id: comment.user_id).name %>:</strong>
   <%= comment.comment %><br>
-  <%= link_to 'Destroy', [@post,comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Remove', [@post,comment], method: :delete, data: { confirm: 'Are you sure?' } %><br>
  
 </td></td>
 <% end %>
