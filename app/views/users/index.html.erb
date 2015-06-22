@@ -7,7 +7,7 @@
        <th>id</th>
       <th><th>name</th></th>
       <th><th>email</th></th>
-     <th>role_id</th>
+     <th>role</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
       	<td><%= @id=student.id %></td>
     	<td><td><%=link_to student.name, user_posts_path(@id) %> </td></td>
         <td><td><%= student.email %></td></td>
-        <td><%= student.role_id %></td>
+        <td><%= Role.find_by_id(student.role_id).name %></td>
 
         <td><%= link_to 'edit', user_edit_path(student) %></td>
       </tr>
