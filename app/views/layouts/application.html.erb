@@ -5,20 +5,25 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
 </head>
 <style>
 	#header{background: #33CC66; border-bottom: solid #004400 4px }
-	#menu{background: #004400; margin-top: 0%; height: 666px}
+	#menu{ margin-top: 0%;  background: #004400;  
+ min-height:100%;  } 
 </style>
-<body style="margin-top: -1% ; background:WhiteSmoke;">
+<body onload="resizediv()" style="margin-top: -1% ; background:WhiteSmoke;  height:100%;
+ min-height:100%; border:3px green soli ">
 <header id="header">
       <%= render 'layouts/header' %>
 </header>
- <main>
+ <main  id="body"style="height:100% ; background: #004400;" >
  <div id= "menu" style="float: left ; width: 17%;">
+
       <%= render 'layouts/menu' %>
  </div>
- <div style="float: left; width: 75%; margin-left: 30px; ">
+ <div id="right" style="float: left; width: 75%; margin-left: 30px; height:100% ">
 <%= yield %>
 </div>
 </main>

@@ -1,4 +1,5 @@
 class CategoryPostController < ApplicationController
+	
 	def index
 		@categories= Category.all
 		# @id=5
