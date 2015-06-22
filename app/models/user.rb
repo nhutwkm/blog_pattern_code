@@ -20,4 +20,24 @@ class User < ActiveRecord::Base
             User.find_by_id(id).update(id: id,name: name, email: email,role_id: role_id)
         end
       end
+
+    def admin?
+      # binding.pry
+        if self.id.nil?
+           false
+        else
+          self.role.id ==1   
+        end 
+        # binding.pry
+    end
+
+    def user?
+        if self.id.nil?
+           false
+        else
+            self.role.id ==2
+        end 
+        # binding.pry
+    end
+
 end
