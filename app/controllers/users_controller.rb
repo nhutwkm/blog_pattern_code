@@ -6,8 +6,6 @@ class UsersController < ApplicationController
   redirect_to root_url, :alert => exception.message
   end
 
-
-
   def index #show ra  list danh sach
     @user = User.user_list(params[:page])
   end
