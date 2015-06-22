@@ -17,6 +17,7 @@ ul#navlist li a:hover, ul#navlist li#active a:hover { color: #0bd500; background
 <div id="navcontainer">
 <ul id="navlist">
 <% @categories= Category.all%>
+<li><%= link_to "HOME", posts_path%></li>
 <%@categories.each do |categories|%>	
 <li><%= link_to "#{categories.name}", posts_path(categories.id) %></li>
 <% end %>
