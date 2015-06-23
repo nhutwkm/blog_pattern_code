@@ -19,8 +19,9 @@
     	<td><td><%=link_to student.name, user_posts_path(@id) %> </td></td>
         <td><td><%= student.email %></td></td>
         <td><%= student.role_id %></td>
-
-        <td><%= link_to 'edit', user_edit_path(student) %></td>
+        <% if current_user.present?%>
+        <td><%= link_to 'edit', user_edit_path(student) if current_user.role_id == 1 or student.id == current_user.id  %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
