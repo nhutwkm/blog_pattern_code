@@ -1,6 +1,6 @@
-<div style="text-align: center">
+<div class="header" style="text-align: center">
 <br>
-	<h1 style="color: #004400">Blog pattern code</h1>
+	<h1 style="color: #004400"><%= link_to "Blog pattern code", root_path%></h1>
 	<p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.

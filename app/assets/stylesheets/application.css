@@ -4,6 +4,7 @@ body {
     color: #A9834F;
     line-height: 20px;
 }
+.header h1 a{text-decoration: none;}
 .search-box{margin-left:22%; padding-top: 0%}
 .search-box .search-form {
 	position:relative;
