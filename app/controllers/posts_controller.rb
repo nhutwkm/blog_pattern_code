@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
     def index
         # binding.pry
-        if params[:format].nil?&&params[:q].blank?
-          @posts= Post.all
-        elsif params[:q].blank?
-          @posts = Post.Category_post_find(params[:format])
-        else
-          @posts = Post.where("title LIKE '%#{params[:q]}%'")
-        end 
-        @posts=@posts.paginate(:page => params[:page], :per_page  => 5)
-          # @posts = Post.post_list(params[:page])
-        @users = User.all
-      end
+      if params[:format].nil?&&params[:q].blank?
+        @posts= Post.all
+      elsif params[:q].blank?
+        @posts = Post.Category_post_find(params[:format])
+      else
+        @posts = Post.where("title LIKE '%#{params[:q]}%'")
+      end 
+      @posts=@posts.paginate(:page => params[:page], :per_page  => 5)
+        # @posts = Post.post_list(params[:page])
+      @users = User.all
+    end
     
     def new
       @users = User.all
