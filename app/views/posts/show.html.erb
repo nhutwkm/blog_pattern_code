@@ -36,8 +36,9 @@
 <% @post.commands.each do |comment| %>
   <td><td><strong><%= User.find_by(id: comment.user_id).name %>:</strong>
   <%= comment.comment %><br>
+  <% if current_user.present?%>
   <%= link_to 'Remove', [@post,comment], method: :delete, data: { confirm: 'Are you sure?' } if current_user.role_id==1 or current_user && current_user.id == comment.user_id %><br>
- 
+  <%end%>
 </td></td>
 <% end %>
  
