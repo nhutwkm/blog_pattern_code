@@ -17,12 +17,20 @@ class Post < ActiveRecord::Base
 	  Post.find(id).destroy
 	end	
 	def self.post_list(page)
-      Post.paginate(:page =>page, :per_page => 5).order('title asc')	 
+     Post.paginate(:page =>page, :per_page => 5).order('title asc')	 
 	end
 	def self.Category_post_find(id)
-
 		 Post.joins(:categories_posts).where("categories_posts.category_id=#{id}")
-		 # User.where(id: 1).joins(:articles).explain
-		 # binding.pry
 	end
+
+	def check_right?
+   self.is_user or self.is_admin
+ 	end
+  def is_user
+    @is_user = User.current.id == user_id
+  end
+  def is_admin
+    @is_admin = User.current.role_id==1
+  end
+
 end

@@ -36,7 +36,7 @@
 <% @post.commands.each do |comment| %>
   <td><td><strong><%= User.find_by(id: comment.user_id).name %>:</strong>
   <%= comment.comment %><br>
-  <%= link_to 'Remove', [@post,comment], method: :delete, data: { confirm: 'Are you sure?' } %><br>
+  <%= link_to 'Remove', [@post,comment], method: :delete, data: { confirm: 'Are you sure?' } if current_user.role_id==1 or current_user && current_user.id == comment.user_id %><br>
  
 </td></td>
 <% end %>
@@ -52,6 +52,6 @@
   </p>
 <% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> 
-<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_post_path(@post) if @post.check_right? %> 
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } if @post.check_right? %>
 <%= link_to 'Back', posts_path %>
