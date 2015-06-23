@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     Thread.current[:user] = user
   end
   def self.user_list(page)
-   	User.paginate(:page => page, :per_page => 5)
+    User.paginate(:page => page, :per_page => 5)
   end
   def self.edit(id)
     User.find_by_id(id)   
@@ -24,4 +24,23 @@ class User < ActiveRecord::Base
         User.find_by_id(id).update(id: id,name: name, email: email,role_id: role_id)
     end
   end
+
+  def admin?
+      # binding.pry
+        if self.id.nil?
+           false
+        else
+          self.role.id ==1   
+        end 
+        # binding.pry
+  end
+
+  def user?
+    if self.id.nil?
+        false
+    else
+            self.role.id ==2
+    end 
+  end
+
 end

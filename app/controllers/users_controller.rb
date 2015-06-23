@@ -6,8 +6,12 @@ class UsersController < ApplicationController
   end
 
   def edit#bat su kien edit hien thi thong tin tai cot can sua,sau khi ket thuc se nhay den update
-    @user = User.edit(params[:user_id])
-    @role = Role.all
+    if (params[:user_id].to_i==current_user.id)||(current_user.role_id==1)
+      @user = User.edit(params[:user_id])
+      @role = Role.all
+    else
+      redirect_to users_path
+    end
   end
 
   def update#ham de xu ly edit udate cac thong tin xuong db
