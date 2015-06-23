@@ -41,17 +41,19 @@
   <%end%>
 </td></td>
 <% end %>
- 
-<h2>Add a comment:</h2>
-<%= form_for([@post, @post.commands.build]) do |f| %>
-  <p>
-    <%= f.label :comment%><br>
-    <%= f.text_area :comment %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<% if current_user.present?%>
+  <h2>Add a comment:</h2>
+  <%= form_for([@post, @post.commands.build]) do |f| %>
+    <p>
+      <%= f.label :comment%><br>
+      <%= f.text_area :comment %>
+    </p>   
+    <p><%= f.submit %></p>
+  <% end %>
+<% else%>
+  <p><%= link_to "Please sign in to comment!", new_user_session_path%><p>
+<% end%>
+
 
 <%= link_to 'Edit', edit_post_path(@post) if @post.check_right? %> 
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } if @post.check_right? %>
