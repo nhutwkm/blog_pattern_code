@@ -18,17 +18,17 @@ class UsersController < ApplicationController
   end
 
   def list
-      @users = User.all
+    @users = User.all
   end
 
   def posts
-      @user = User.find_by(id: params[:user_id])
-      # binding.pry
-      unless @user.nil?
-        @posts_of_user = Post.list_posts_of_user(@user) 
-      else
-        @posts_of_user = Post.all
-      end   
-      @posts_of_user = @posts_of_user.paginate(:page => params[:page], :per_page  => 1)
+    @user = User.find_by(id: params[:user_id])
+    # binding.pry
+    if @user.nil?
+      @posts_of_user = Post.all
+    else
+      @posts_of_user = Post.list_posts_of_user(@user)      
+    end   
+    @posts_of_user = @posts_of_user.paginate(:page => params[:page], :per_page  => 1)
   end
 end
